@@ -1,2 +1,2 @@
 # Omoide coffee
-## Ссылки - [website](https://mashroom-ah.github.io/hairtage/)
+## Ссылки - [website](https://lyubagg4.github.io/front/hairtage/)
