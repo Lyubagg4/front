@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Админ — Вход</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages/admin-login.css" />
+</head>
+
+<body class="admin-login-body">
+
+<main class="admin-login-main">
+    <h1 class="admin-login-title">Система администрирования Hairtage</h1>
+
+    <div class="admin-login-card">
+        <label class="admin-field">
+            <span>Имя</span>
+            <input id="nameInput" type="text" />
+        </label>
+
+        <label class="admin-field">
+            <span>Пароль*</span>
+            <input id="passInput" type="password" value="" />
+        </label>
+
+        <div class="admin-login-hint">*Минимум 8 символов</div>
+
+        <button class="admin-login-btn" id="loginBtn">Вход</button>
+    </div>
+</main>
+
+<script>
+    document.getElementById("loginBtn").addEventListener("click", () => {
+      window.location.href = "admin-products.html";
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <title>Админ — Добавление</title>
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/pages/admin-product.css" />
+</head>
+
+<body class="admin-product-body">
+<header class="admin-top">
+    <div class="admin-top-left">
+        <a class="logout-btn" href="admin-products.html" title="Назад">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M10 7V5a2 2 0 0 1 2-2h7v18h-7a2 2 0 0 1-2-2v-2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M3 12h10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M7 8l-4 4 4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+        <div class="admin-user">admin_Yanochka</div>
+    </div>
+
+    <!-- БРЕНД КАК В INDEX -->
+    <div class="admin-top-right">
+        <div class="brand">
+            <span>Hairitage</span>
+            <img src="assets/icons/logo.svg" alt="Hairtage logo">
+        </div>
+    </div>
+</header>
+
+<main class="admin-editor">
+    <section class="editor-card">
+        <div class="editor-grid">
+            <div class="photo-col">
+                <div class="photo-frame" id="imgBox">
+                    <img id="previewImg" alt="" />
+                </div>
+
+                <input id="fileInput" type="file" accept="image/*" hidden />
+            </div>
+
+            <div class="fields-col">
+                <label class="field">
+                    <span>Название</span>
+                    <input id="nameInput" type="text" />
+                </label>
+
+                <label class="field">
+                    <span>Тип продукта</span>
+                    <input id="typeInput" type="text" />
+                </label>
+
+                <label class="field">
+                    <span>Ценовая категория</span>
+                    <input id="priceInput" type="text" placeholder="cheap / medium / high" />
+                </label>
+            </div>
+        </div>
+
+        <label class="field field-full">
+            <span>Состав</span>
+            <textarea id="ingInput" rows="8" placeholder="Panthenol, Keratin, ..."></textarea>
+        </label>
+
+        <p class="warn" id="warn" style="display:none;">Заполни название и тип продукта.</p>
+    </section>
+
+    <aside class="editor-actions">
+        <button class="green-btn" id="uploadBtn" type="button">Изменить изображение</button>
+        <button class="green-btn" id="cancelBtn" type="button">Отменить</button>
+        <button class="green-btn" id="saveBtn" type="button">Сохранить</button>
+    </aside>
+</main>
+
+<script src="js/data/products.js"></script>
+<script src="js/admin-product.js"></script>
+</body>
+</html>

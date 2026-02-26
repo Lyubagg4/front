@@ -1,0 +1,225 @@
+/* единообразие как везде */
+.admin-products-body {
+  font-family: var(--font-main);
+  color: var(--text);
+  min-height: 100vh;
+  background: var(--green-light);
+}
+
+/* ЕДИНЫЕ ОТСТУПЫ ДЛЯ ВСЕХ АДМИН-СТРАНИЦ */
+:root {
+  --admin-side: 3.75rem;  /* как в header.css */
+  --admin-top: 1rem;
+}
+
+/* ----- TOP BAR (одинаковый везде) ----- */
+.admin-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--admin-top) var(--admin-side);
+}
+
+.admin-top-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logout-btn {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.admin-user {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.admin-top-right {
+  display: flex;
+  align-items: center;
+}
+
+/* ----- TOOLBAR ----- */
+.admin-toolbar {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 30px;
+  align-items: center;
+
+  padding: 10px var(--admin-side) 6px var(--admin-side);
+}
+
+.admin-search {
+  position: relative;
+  width: 100%;
+}
+
+.admin-search input {
+  width: 100%;
+  height: 52px;
+  padding: 0 56px 0 20px;
+  border-radius: 26px;
+
+  /* КАК В SURVEY */
+  border: 1px solid var(--green-dark);
+
+  background: #fff;
+
+  font-family: var(--font-main);
+  font-size: 20px;
+  outline: none;
+  box-shadow: var(--shadow);
+}
+
+.search-icon {
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(46,46,46,0.75);
+}
+
+.admin-actions {
+  display: flex;
+  gap: 26px;
+}
+
+/* большие зелёные кнопки-иконки */
+.action-btn {
+  width: 190px;
+  height: 58px;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+
+  background: radial-gradient(circle at center, var(--green-btn-light), var(--green-btn-dark));
+  box-shadow: var(--shadow);
+
+  display: grid;
+  place-items: center;
+  color: var(--text);
+
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.action-btn:hover { transform: scale(1.01); }
+
+.action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ----- CONTENT ----- */
+.admin-content {
+  padding: 10px var(--admin-side) 50px var(--admin-side);
+}
+
+/* category */
+.category {
+  margin-top: 14px;
+  margin-bottom: 28px;
+}
+
+.category-title {
+  font-size: 2.25rem;
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  margin: 18px 0 18px 0;
+}
+
+/* grid */
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+/* card */
+.product-card {
+  background: #fff;
+  border-radius: var(--radius);
+
+  /* КАК В SURVEY */
+  border: 1px solid var(--green-dark);
+
+  box-shadow: var(--shadow);
+
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 22px;
+
+  cursor: pointer;
+  user-select: none;
+}
+
+.product-card.selected {
+  outline: 3px solid rgba(162, 214, 109, 0.65);
+  outline-offset: 0;
+}
+
+.product-card img {
+  width: 160px;
+  height: 210px;
+  object-fit: contain;
+  justify-self: center;
+  align-self: center;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.product-info p {
+  font-size: 1.6rem;
+  line-height: 1.25;
+  font-weight: 500;
+}
+
+.product-info .price {
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.product-info .price::before {
+  content: "Ценовой сегмент:\A";
+  white-space: pre;
+  display: block;
+  font-weight: 500;
+}
+
+/* Адаптив */
+@media (max-width: 1100px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .admin-toolbar {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-actions {
+    flex-wrap: wrap;
+  }
+
+  .action-btn {
+    width: 100%;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

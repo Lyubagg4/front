@@ -1,0 +1,199 @@
+.admin-product-body {
+  font-family: var(--font-main);
+  color: var(--text);
+  min-height: 100vh;
+  background: var(--green-light);
+}
+
+/* единые отступы как в header.css */
+:root {
+  --admin-side: 3.75rem;
+  --admin-top: 1rem;
+}
+
+/* top bar */
+.admin-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--admin-top) var(--admin-side);
+}
+
+.admin-top-left {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.logout-btn {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.admin-user {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.admin-top-right {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+/* layout */
+.admin-editor {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 60px;
+  padding: 18px var(--admin-side) 50px var(--admin-side);
+  align-items: start;
+}
+
+/* card */
+.editor-card {
+  background: #fff;
+  border-radius: var(--radius);
+
+  /* КАК В SURVEY */
+  border: 1px solid var(--green-dark);
+
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+.editor-grid {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.photo-col {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* рамка под фото */
+.photo-frame {
+  width: 320px;
+  height: 320px;
+  border-radius: 10px;
+
+  /* КАК В SURVEY */
+  border: 1px solid var(--green-dark);
+
+  background: #fff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.photo-frame img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.fields-col {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.field span {
+  display: block;
+  font-size: 2.25rem;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.field input {
+  width: 100%;
+  height: 56px;
+  border-radius: 8px;
+
+  /* КАК В SURVEY */
+  border: 1px solid var(--green-dark);
+
+  padding: 10px 14px;
+  font-size: 1.4rem;
+  font-family: var(--font-main);
+  outline: none;
+  background: #fff;
+}
+
+.field-full {
+  margin-top: 18px;
+}
+
+.field textarea {
+  width: 100%;
+  min-height: 220px;
+  border-radius: 8px;
+
+  /* КАК В SURVEY */
+  border: 1px solid var(--green-dark);
+
+  padding: 14px 16px;
+  font-size: 1.25rem;
+  font-family: var(--font-main);
+  outline: none;
+  resize: none;
+  background: #fff;
+}
+
+/* right actions */
+.editor-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 40px;
+}
+
+.green-btn {
+  width: 100%;
+  height: 120px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+
+  background: radial-gradient(circle at center, var(--green-btn-light), var(--green-btn-dark));
+  box-shadow: var(--shadow);
+
+  font-size: 2.1rem;
+  font-weight: 500;
+  font-family: var(--font-main);
+  color: var(--text);
+
+  display: grid;
+  place-items: center;
+
+  transition: transform 0.12s ease;
+}
+
+.green-btn:hover { transform: scale(1.01); }
+
+.green-btn.small {
+  height: 120px;
+  width: 100%;
+  font-size: 2rem;
+}
+
+.warn {
+  margin-top: 14px;
+  font-size: 1rem;
+  color: #c0392b;
+}
